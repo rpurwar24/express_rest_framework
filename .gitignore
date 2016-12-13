@@ -1,0 +1,5 @@
+
+# removing .log files
+*.log
+.DS_Store
+node_modules/*
