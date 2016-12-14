@@ -3,12 +3,17 @@ var router = express.Router();
 var controllerUser = require('../controllers/user');
 
 /* GET users listing. */
+
+
 router.get('/', function(req, res) {
-  controllerUser.get(res);
+  controllerUser.get(null,res);
+});
+
+router.get('/:id', function(req, res) {
+  controllerUser.get(req.params.id,res);
 });
 
 router.post('/',function(req,res){
-	console.log(req.body);
 	controllerUser.create(req.body,res);
 });
 
